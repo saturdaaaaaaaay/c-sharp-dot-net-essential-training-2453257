@@ -1,0 +1,15 @@
+.Net Data Types
+integral numeric        byte, integer, long
+floating point          float, double, decimal
+char                    'A'
+bool                    true, false
+string                  "abcdefg"
+object                  {...}
+
+Value Types: directly contain the data that they represent
+ex. integer/floating point numbers, characters, booleans, enumerations, structs, tuples
+When used as arguments to a function, a copy is made and passed to the function
+
+Reference Types: contain  a reference to the data that they represent
+ex.: objects, strings, records
+
