@@ -1,4 +1,4 @@
-.Net Data Types
+.NET Data Types
 integral numeric        byte, integer, long
 floating point          float, double, decimal
 char                    'A'
@@ -13,3 +13,10 @@ When used as arguments to a function, a copy is made and passed to the function
 Reference Types: contain  a reference to the data that they represent
 ex.: objects, strings, records
 
+-----------------------------------------------------------------------------------------
+.NET Garbage Collection
+Similar to Java
+Manages and reclaims blocks of memory that are no longer in use 
+Performs efficient allocation on the application "heap" (area of system memory reserved for your program/where your program's objects are kept safe from other programs and processes)
+Happen automatically, as you dont' have to manually release memory
+Few execeptions, like operating system resources (files, network connections)
