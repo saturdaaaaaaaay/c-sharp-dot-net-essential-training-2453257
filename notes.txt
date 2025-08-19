@@ -25,3 +25,18 @@ Basic String Formatting
 Indexes:            "{0}, {1}", var1, var2
 Interpolation:      $"{var1}, {var2}"
 Formatting          $"{var1,[alignment]:[format][precision]}"
+-----------------------------------------------------------------------------------------
+Formatting Numerical Data
+$"{var1,[alignment]:[format][precision]}"
+
+Format specifier can be used to indicate how a value should be displayed
+N: numbers
+G: general
+F: fixed-point
+E: exponential
+D: decimal
+P: percent
+X: hexadecimal
+C: currency
+
+Precision field indicates what numerical precision should be used in the formatting
