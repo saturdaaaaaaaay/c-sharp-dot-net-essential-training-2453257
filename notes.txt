@@ -40,3 +40,8 @@ X: hexadecimal
 C: currency
 
 Precision field indicates what numerical precision should be used in the formatting
+-----------------------------------------------------------------------------------------
+Regular Expressions in .NET
+Finding patterns: IsMatch(). Match(), Matches()
+Replacing content: Replace()
+Regex timeouts: protect program against rogue regexes that can hang your app or cause a DDOS
