@@ -19,27 +19,55 @@ foreach (string test_str in test_strs) {
     Console.WriteLine(learnerResult);
 }
 
-public class Answer {
+public class Answer
+{
 
     // Change these Boolean values to control whether you see 
     // the expected result and/or hints.
-    public  static Boolean ShowExpectedResult = false;
-    public  static Boolean ShowHints = false;
+    public static Boolean ShowExpectedResult = false;
+    public static Boolean ShowHints = false;
 
-    public static string ReverseDate(string date_str) {
-        Regex number = new Regex(@"\d+");
-        Match digit = number.Match(date_str);
-        if (digit.Success) {
-            string month = digit.Value;
-            digit = digit.NextMatch();
-            if (digit.Success) {
-                string day = digit.Value;
-                digit = digit.NextMatch();
-                if (digit.Success) {
-                    string year = digit.Value;
-                    return $"{year}-{month}-{day}";
-                }
-            }
+    // helper function from solution
+    static string ReverseDateFormat(string sourceDate)
+    {
+        const int TIMEOUT = 1000;
+        try
+        {
+            return Regex.Replace(sourceDate,
+                @"^(?<mon>\d{1,2})/(?<day>\d{1,2})/(?<year>\d{2,4})$",
+                "${year}-${mon}-${day}", RegexOptions.None,
+                TimeSpan.FromMilliseconds(TIMEOUT));
+        }
+        catch (RegexMatchTimeoutException)
+        {
+            return sourceDate;
+        }
+    }
+
+    public static string ReverseDate(string date_str)
+    {
+        // Regex number = new Regex(@"\d+");
+        // Match digit = number.Match(date_str);
+        // if (digit.Success)
+        // {
+        //     string month = digit.Value;
+        //     digit = digit.NextMatch();
+        //     if (digit.Success)
+        //     {
+        //         string day = digit.Value;
+        //         digit = digit.NextMatch();
+        //         if (digit.Success)
+        //         {
+        //             string year = digit.Value;
+        //             return $"{year}-{month}-{day}";
+        //         }
+        //     }
+        // }
+        DateTime result;
+        if (DateTime.TryParse(date_str, out result))
+        {
+            string reverseDate = ReverseDateFormat(date_str);
+            return reverseDate;
         }
         return "";
     }
