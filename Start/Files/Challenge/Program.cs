@@ -39,7 +39,7 @@ foreach (string fn in files)
             word_count += 1;
             word_size += length;
         }
-        else
+        else if (extension.Equals(ppt_ext))
         {
             ppt_count += 1;
             ppt_size += length;
